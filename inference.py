@@ -58,18 +58,18 @@ model = AutoModel.from_pretrained(model_path, trust_remote_code=True)
 model = model.to(device)
 
 
-#code 3
+#code 3:
 import torch
 def load_model(model,file_name='ANNc.pth.tar'):
     #loads model and optimizer 
     checkpoint = torch.load(file_name)
     model.load_state_dict(checkpoint["state_dict"])
 
-#code 4
+#code 4:
 cnn = ANNc().to(device)
 load_model(cnn)
 
-#code 5
+#code 5:
 import re
 def clean_value(value):
     # Replace underscores with spaces for each variable
@@ -95,7 +95,7 @@ def get_embedding(sentences):
     )
     return vector_embeddings
 
-#code 7
+#code 7:
 def inference(x):
     """
     performs a prediction.
@@ -106,7 +106,7 @@ def inference(x):
     y_pred = cnn(x_tensor)
     return 'True' if y_pred >= .5 else 'False'
 
-#code 8
+#code 8:
 x = {
     'Entity1':'Benoît Biteau',
     'Entity2':'farm operator',
