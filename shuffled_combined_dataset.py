@@ -184,7 +184,7 @@ shuffled_df = df.sample(frac=1).reset_index(drop=True)
 # Save the shuffled DataFrame to Google Drive
 shuffled_df.to_csv('/content/drive/My Drive/shuffled_invalid_analogies.csv', index=False)
 
-print("The rows have been shuffled and saved to shuffled_valid_analogies.csv in your Google Drive")
+print("The rows have been shuffled and saved to shuffled_invalid_analogies.csv in your Google Drive")
 
 # code 7:
 from google.colab import drive
