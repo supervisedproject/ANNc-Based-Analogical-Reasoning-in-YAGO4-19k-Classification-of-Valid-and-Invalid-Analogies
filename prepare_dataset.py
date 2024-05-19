@@ -29,6 +29,7 @@ def clean_dataframe(df):
     cleaned_df = cleaned_df.replace('', pd.NA).dropna()
     cleaned_df.reset_index(drop=True, inplace=True)
     return cleaned_df    
+
 #code 4:
 def get_embedding(sentences):
     #gets the embeddings, also applies mean pooling, truncation and padding.
@@ -45,6 +46,7 @@ def get_embedding(sentences):
         input_mask_expanded.sum(1), min=1e-9
     )
     return vector_embeddings
+
 # code 5:
 import pandas as pd
 def build_df(dataset_name,num_samples):
@@ -90,6 +92,7 @@ def build_dataset_with_emb(dataset_csv,batch_size = 1000):
     #torch.tensor(df.iloc[0]['word_embeddings'])
     df = pd.concat([dataset_csv, df], axis=1)
     return df
+
 # code 8:
 #the dataset after we compute the embeddings and being added into the dataframe as a column
 dataset_with_emb = build_dataset_with_emb(dataset_csv)
